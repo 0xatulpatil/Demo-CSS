@@ -10,13 +10,37 @@ html{
     color: white;
 }
 
+.headings{
+    background-color:#202C46 ;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 40px;
+}
+
+.main-head{
+    
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+.sub-head{
+    font-size: 18px;
+    
+    text-align: center;
+}
 .container{
     min-height: 100vh;
     width: 100%;
     display: flex;
+    padding-top: 100px;
+    padding-bottom: 100px;
     justify-content: center;
     align-items: center;
-    background-color: #101010;
+    background-color: #202C46;
 }
 
 .timeline{
@@ -33,7 +57,7 @@ html{
 
 .timeline ul li{
     padding: 20px;
-    background-color: #1e1f22;
+    
     color: white;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -57,7 +81,44 @@ html{
 }
 
 @media only screen and (min-width: 768px){
+
+
+
+    .main-head{
+        text-align: center;
+        font-size: 45px;
+        font-weight: 700;
+    }
+    .sub-head{
+        font-size: 18px;
+        
+        text-align: center;
+    }
+
+    .timeline-content h1{
+        font-size: 35px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
     
+    .timeline-content p{
+        font-size: 20px;
+        
+        font: bold;
+        font-weight: 300;
+    }
+
+    .timeline::before{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgb(58,28,113);
+        background: linear-gradient(153deg, rgba(58,28,113,0.9911764705882353) 25%, rgba(255,175,123,1) 89%);
+        
+    }
     .timeline ul li{
         width: 50%;
         margin-bottom: 50px;
@@ -67,10 +128,34 @@ html{
     .timeline ul li:nth-child(odd){
         float: left;
         clear: right ;
+        transform: translateX(-30px);
     }
 
     .timeline ul li:nth-child(even){
         float:right;
+        transform: translateX(30px);
         clear: left ;
+    }
+
+    .timeline ul li::after{
+        content: '';
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        top: 0;
+        background: rgb(0,0,70);
+        background: linear-gradient(153deg, rgba(0,0,70,1) 14%, rgba(28,181,224,1) 69%);        
+    }
+
+   
+    .timeline ul li:nth-child(odd)::after{
+        right: -30px;
+        transform: translate(50%, -50%);
+    }
+
+    .timeline ul li:nth-child(even)::after{
+        left: -30px;
+        transform: translate(-50%, -50%);
     }
 }
